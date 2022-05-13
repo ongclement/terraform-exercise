@@ -12,8 +12,8 @@ provider "aws" {
   region  = "ap-southeast-1"
 
   //TODO: Place access key in env
-  access_key = "AKIASEFQCHMOQ52LVFLO"
-  secret_key = "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"
+  access_key = var.ACCESS_KEY
+  secret_key = var.SECRET_KEY
 }
 
 resource "aws_vpc" "main-vpc" {
