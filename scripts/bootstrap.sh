@@ -20,15 +20,14 @@ sudo mount -a
 
 echo "Bootstrapping Complete!"
 
-echo "Installing nginx server"
-amazon-linux-extras install nginx1
-
-#TODO: Change configuration setup to use ansible instead
-echo "Changing default root directory to /data"
-sed -i '/root/c\        root         /data;' /etc/nginx/nginx.conf
-
-echo "Creating index file"
-echo "Hello" > /data/index.html
-
-echo "Starting up nginx server"
-service nginx start
+#echo "Installing nginx server"
+#amazon-linux-extras install nginx1
+#
+#echo "Changing default root directory to /data"
+#sed -i '/root/c\        root         /data;' /etc/nginx/nginx.conf
+#
+#echo "Creating index file"
+#echo "Hello" > /data/index.html
+#
+#echo "Starting up nginx server"
+#service nginx start

@@ -94,6 +94,27 @@ resource "aws_instance" "linux-vm" {
     project = "bytedance-assessment"
     cost-center = "bytedance"
   }
+
+  connection {
+    type = "ssh"
+    user = var.USER
+    private_key = var.PRIVATE_KEY_PATH
+    host = self.public_ip
+  }
+
+  provisioner "remote-exec" {
+    inline = ["sudo yum install python"]
+
+    connection {
+      type        = "ssh"
+      user        = "ec2-user"
+      private_key = file(var.PRIVATE_KEY_PATH)
+    }
+  }
+
+  provisioner "local-exec" {
+    command = "ansible-playbook -u ec2-user -i '${self.public_ip},' --private-key ${var.PRIVATE_KEY_PATH} ansible/playbook.yml"
+  }
 }
 
 resource "aws_key_pair" "key" {
