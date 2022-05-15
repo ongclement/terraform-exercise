@@ -1,9 +1,9 @@
 variable "PUBLIC_KEY_PATH" {
-  default = "ec2-key.pub"
+  default = "keys/ec2-key.pub"
 }
 
 variable "PRIVATE_KEY_PATH" {
-  default = "ec2-pvt-key.pem"
+  default = "keys/ec2-pvt-key.pem"
 }
 
 variable "USER" {
