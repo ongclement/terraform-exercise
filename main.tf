@@ -7,7 +7,7 @@ terraform {
   }
   required_version = ">= 0.15"
 }
-//TODO: Make use of variables.tf for variables storing
+
 provider "aws" {
   region  = "ap-southeast-1"
 
@@ -26,10 +26,12 @@ resource "aws_vpc" "main-vpc" {
   }
 }
 
-resource "aws_subnet" "main-vpc-subnet-1" {
+resource "aws_subnet" "main-vpc-subnet" {
+  count = 2
   vpc_id = aws_vpc.main-vpc.id
-  cidr_block = "10.9.0.0/24"
-  map_public_ip_on_launch = "true"
+  map_public_ip_on_launch = true
+  cidr_block = var.private_subnet[count.index]
+  availability_zone = var.availability_zones[count.index]
 
   tags = {
     Name = "main-vpc"
@@ -77,16 +79,18 @@ resource "aws_security_group" "allow-all" {
 }
 
 resource "aws_route_table_association" "public-subnet-1" {
-  subnet_id      = aws_subnet.main-vpc-subnet-1.id
+  count = 2
+  subnet_id = element(aws_subnet.main-vpc-subnet.*.id, count.index)
   route_table_id = aws_route_table.crt.id
 }
 
 resource "aws_instance" "linux-vm" {
+  count = 2
   ami = "ami-0bd6906508e74f692"
   instance_type = "t2.micro"
   key_name = aws_key_pair.key.id
   user_data = file("scripts/bootstrap.sh")
-  subnet_id = aws_subnet.main-vpc-subnet-1.id
+  subnet_id = element(aws_subnet.main-vpc-subnet.*.id, count.index)
   vpc_security_group_ids = [aws_security_group.allow-all.id]
 
   tags = {
@@ -123,8 +127,9 @@ resource "aws_key_pair" "key" {
 }
 
 resource "aws_ebs_volume" "ebs_volume" {
+  count = 2
   size              = 10
-  availability_zone = aws_instance.linux-vm.availability_zone
+  availability_zone = element(aws_instance.linux-vm.*.availability_zone, count.index)
 
   tags = {
     Name = "ec2-linux-EBS"
@@ -134,8 +139,44 @@ resource "aws_ebs_volume" "ebs_volume" {
 }
 
 resource "aws_volume_attachment" "volume_attachment" {
-  instance_id = aws_instance.linux-vm.id
-  volume_id   = aws_ebs_volume.ebs_volume.id
+  count = 2
+  instance_id = element(aws_instance.linux-vm.*.id, count.index)
+  volume_id   = element(aws_ebs_volume.ebs_volume.*.id, count.index)
   device_name = "/dev/sdh"
   force_detach = true
+}
+
+resource "aws_lb" "application_load_balancer" {
+  load_balancer_type = "application"
+  security_groups = [aws_security_group.allow-all.id]
+  subnets = aws_subnet.main-vpc-subnet.*.id
+
+  tags = {
+    Name = "application-load-balancer"
+  }
+}
+
+resource "aws_lb_target_group" "web_servers" {
+  name     = "alb-target-group"
+  port     = 80
+  protocol = "HTTP"
+  vpc_id   = aws_vpc.main-vpc.id
+}
+
+resource "aws_lb_listener" "alb_listener" {
+  load_balancer_arn = aws_lb.application_load_balancer.arn
+  port = "80"
+  protocol = "HTTP"
+
+  default_action {
+    type = "forward"
+    target_group_arn = aws_lb_target_group.web_servers.arn
+  }
+}
+
+resource "aws_lb_target_group_attachment" "tg-attachment" {
+  count = 2
+  target_group_arn = aws_lb_target_group.web_servers.arn
+  target_id = element(aws_instance.linux-vm.*.id, count.index)
+  port = 80
 }
