@@ -1,0 +1,911 @@
+terraform apply -auto-approve
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_ebs_volume.ebs_volume[0] will be created
+  + resource "aws_ebs_volume" "ebs_volume" {
+      + arn               = (known after apply)
+      + availability_zone = (known after apply)
+      + encrypted         = (known after apply)
+      + id                = (known after apply)
+      + iops              = (known after apply)
+      + kms_key_id        = (known after apply)
+      + size              = 10
+      + snapshot_id       = (known after apply)
+      + tags              = {
+          + "Name"    = "ebs"
+          + "project" = "bytedance-assessment"
+        }
+      + tags_all          = {
+          + "Name"    = "ebs"
+          + "project" = "bytedance-assessment"
+        }
+      + throughput        = (known after apply)
+      + type              = (known after apply)
+    }
+
+  # aws_ebs_volume.ebs_volume[1] will be created
+  + resource "aws_ebs_volume" "ebs_volume" {
+      + arn               = (known after apply)
+      + availability_zone = (known after apply)
+      + encrypted         = (known after apply)
+      + id                = (known after apply)
+      + iops              = (known after apply)
+      + kms_key_id        = (known after apply)
+      + size              = 10
+      + snapshot_id       = (known after apply)
+      + tags              = {
+          + "Name"    = "ebs"
+          + "project" = "bytedance-assessment"
+        }
+      + tags_all          = {
+          + "Name"    = "ebs"
+          + "project" = "bytedance-assessment"
+        }
+      + throughput        = (known after apply)
+      + type              = (known after apply)
+    }
+
+  # aws_instance.linux-vm[0] will be created
+  + resource "aws_instance" "linux-vm" {
+      + ami                                  = "ami-0bd6906508e74f692"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t2.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "Name"    = "ec2-linux"
+          + "project" = "bytedance-assessment"
+        }
+      + tags_all                             = {
+          + "Name"    = "ec2-linux"
+          + "project" = "bytedance-assessment"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = "270c26aaada04e284ced9536edb27fea67c59558"
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification {
+          + capacity_reservation_preference = (known after apply)
+
+          + capacity_reservation_target {
+              + capacity_reservation_id                 = (known after apply)
+              + capacity_reservation_resource_group_arn = (known after apply)
+            }
+        }
+
+      + ebs_block_device {
+          + delete_on_termination = (known after apply)
+          + device_name           = (known after apply)
+          + encrypted             = (known after apply)
+          + iops                  = (known after apply)
+          + kms_key_id            = (known after apply)
+          + snapshot_id           = (known after apply)
+          + tags                  = (known after apply)
+          + throughput            = (known after apply)
+          + volume_id             = (known after apply)
+          + volume_size           = (known after apply)
+          + volume_type           = (known after apply)
+        }
+
+      + enclave_options {
+          + enabled = (known after apply)
+        }
+
+      + ephemeral_block_device {
+          + device_name  = (known after apply)
+          + no_device    = (known after apply)
+          + virtual_name = (known after apply)
+        }
+
+      + maintenance_options {
+          + auto_recovery = (known after apply)
+        }
+
+      + metadata_options {
+          + http_endpoint               = (known after apply)
+          + http_put_response_hop_limit = (known after apply)
+          + http_tokens                 = (known after apply)
+          + instance_metadata_tags      = (known after apply)
+        }
+
+      + network_interface {
+          + delete_on_termination = (known after apply)
+          + device_index          = (known after apply)
+          + network_card_index    = (known after apply)
+          + network_interface_id  = (known after apply)
+        }
+
+      + root_block_device {
+          + delete_on_termination = (known after apply)
+          + device_name           = (known after apply)
+          + encrypted             = (known after apply)
+          + iops                  = (known after apply)
+          + kms_key_id            = (known after apply)
+          + tags                  = (known after apply)
+          + throughput            = (known after apply)
+          + volume_id             = (known after apply)
+          + volume_size           = (known after apply)
+          + volume_type           = (known after apply)
+        }
+    }
+
+  # aws_instance.linux-vm[1] will be created
+  + resource "aws_instance" "linux-vm" {
+      + ami                                  = "ami-0bd6906508e74f692"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t2.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "Name"    = "ec2-linux"
+          + "project" = "bytedance-assessment"
+        }
+      + tags_all                             = {
+          + "Name"    = "ec2-linux"
+          + "project" = "bytedance-assessment"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = "270c26aaada04e284ced9536edb27fea67c59558"
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification {
+          + capacity_reservation_preference = (known after apply)
+
+          + capacity_reservation_target {
+              + capacity_reservation_id                 = (known after apply)
+              + capacity_reservation_resource_group_arn = (known after apply)
+            }
+        }
+
+      + ebs_block_device {
+          + delete_on_termination = (known after apply)
+          + device_name           = (known after apply)
+          + encrypted             = (known after apply)
+          + iops                  = (known after apply)
+          + kms_key_id            = (known after apply)
+          + snapshot_id           = (known after apply)
+          + tags                  = (known after apply)
+          + throughput            = (known after apply)
+          + volume_id             = (known after apply)
+          + volume_size           = (known after apply)
+          + volume_type           = (known after apply)
+        }
+
+      + enclave_options {
+          + enabled = (known after apply)
+        }
+
+      + ephemeral_block_device {
+          + device_name  = (known after apply)
+          + no_device    = (known after apply)
+          + virtual_name = (known after apply)
+        }
+
+      + maintenance_options {
+          + auto_recovery = (known after apply)
+        }
+
+      + metadata_options {
+          + http_endpoint               = (known after apply)
+          + http_put_response_hop_limit = (known after apply)
+          + http_tokens                 = (known after apply)
+          + instance_metadata_tags      = (known after apply)
+        }
+
+      + network_interface {
+          + delete_on_termination = (known after apply)
+          + device_index          = (known after apply)
+          + network_card_index    = (known after apply)
+          + network_interface_id  = (known after apply)
+        }
+
+      + root_block_device {
+          + delete_on_termination = (known after apply)
+          + device_name           = (known after apply)
+          + encrypted             = (known after apply)
+          + iops                  = (known after apply)
+          + kms_key_id            = (known after apply)
+          + tags                  = (known after apply)
+          + throughput            = (known after apply)
+          + volume_id             = (known after apply)
+          + volume_size           = (known after apply)
+          + volume_type           = (known after apply)
+        }
+    }
+
+  # aws_internet_gateway.igw will be created
+  + resource "aws_internet_gateway" "igw" {
+      + arn      = (known after apply)
+      + id       = (known after apply)
+      + owner_id = (known after apply)
+      + tags     = {
+          + "Name"    = "main-vpc-ig"
+          + "project" = "bytedance-assessment"
+        }
+      + tags_all = {
+          + "Name"    = "main-vpc-ig"
+          + "project" = "bytedance-assessment"
+        }
+      + vpc_id   = (known after apply)
+    }
+
+  # aws_key_pair.key will be created
+  + resource "aws_key_pair" "key" {
+      + arn             = (known after apply)
+      + fingerprint     = (known after apply)
+      + id              = (known after apply)
+      + key_name        = "ec2-pvt-key"
+      + key_name_prefix = (known after apply)
+      + key_pair_id     = (known after apply)
+      + public_key      = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCMpUuvcUHXbzgC44n9FgDbiZE9X2iW2it67xG6LPfTNiFdbDisXIQAI77K4S7HtO+EhvywhAhpiCtIWIHDnSwAFNZmmExg+kDGZ0tcbHmEt5a7yRQlgUqNX166GCccNaaIerKapZcyxxPEzcyar4huUXkOhKQcuUSYLoaHq5Naw3yOCfnGTWbTOBAJli78M6WSH85W2B6X0H8KhclnuUtV9pqmJM9VZf7LYJZTckOHKvaT/fkspfiADq0PrKzTb/hSCD03cWUfN1lmzFYqhfE1aVjR4HBq2a+MU1rVwabKz8SJiKGLu0MzQM7X0IwoiPbBKlsTuP7INi0VcW99iwiH"
+      + tags            = {
+          + "Name"    = "key-pair"
+          + "project" = "bytedance-assessment"
+        }
+      + tags_all        = {
+          + "Name"    = "key-pair"
+          + "project" = "bytedance-assessment"
+        }
+    }
+
+  # aws_lb.application_load_balancer will be created
+  + resource "aws_lb" "application_load_balancer" {
+      + arn                        = (known after apply)
+      + arn_suffix                 = (known after apply)
+      + desync_mitigation_mode     = "defensive"
+      + dns_name                   = (known after apply)
+      + drop_invalid_header_fields = false
+      + enable_deletion_protection = false
+      + enable_http2               = true
+      + enable_waf_fail_open       = false
+      + id                         = (known after apply)
+      + idle_timeout               = 60
+      + internal                   = (known after apply)
+      + ip_address_type            = (known after apply)
+      + load_balancer_type         = "application"
+      + name                       = (known after apply)
+      + security_groups            = (known after apply)
+      + subnets                    = (known after apply)
+      + tags                       = {
+          + "Name"    = "alb"
+          + "project" = "bytedance-assessment"
+        }
+      + tags_all                   = {
+          + "Name"    = "alb"
+          + "project" = "bytedance-assessment"
+        }
+      + vpc_id                     = (known after apply)
+      + zone_id                    = (known after apply)
+
+      + subnet_mapping {
+          + allocation_id        = (known after apply)
+          + ipv6_address         = (known after apply)
+          + outpost_id           = (known after apply)
+          + private_ipv4_address = (known after apply)
+          + subnet_id            = (known after apply)
+        }
+    }
+
+  # aws_lb_listener.alb_listener will be created
+  + resource "aws_lb_listener" "alb_listener" {
+      + arn               = (known after apply)
+      + id                = (known after apply)
+      + load_balancer_arn = (known after apply)
+      + port              = 80
+      + protocol          = "HTTP"
+      + ssl_policy        = (known after apply)
+      + tags              = {
+          + "Name"    = "alb-listener"
+          + "project" = "bytedance-assessment"
+        }
+      + tags_all          = {
+          + "Name"    = "alb-listener"
+          + "project" = "bytedance-assessment"
+        }
+
+      + default_action {
+          + order            = (known after apply)
+          + target_group_arn = (known after apply)
+          + type             = "forward"
+        }
+    }
+
+  # aws_lb_target_group.web_servers will be created
+  + resource "aws_lb_target_group" "web_servers" {
+      + arn                                = (known after apply)
+      + arn_suffix                         = (known after apply)
+      + connection_termination             = false
+      + deregistration_delay               = "300"
+      + id                                 = (known after apply)
+      + lambda_multi_value_headers_enabled = false
+      + load_balancing_algorithm_type      = (known after apply)
+      + name                               = "alb-target-group"
+      + port                               = 80
+      + preserve_client_ip                 = (known after apply)
+      + protocol                           = "HTTP"
+      + protocol_version                   = (known after apply)
+      + proxy_protocol_v2                  = false
+      + slow_start                         = 0
+      + tags                               = {
+          + "Name"    = "alb-tg"
+          + "project" = "bytedance-assessment"
+        }
+      + tags_all                           = {
+          + "Name"    = "alb-tg"
+          + "project" = "bytedance-assessment"
+        }
+      + target_type                        = "instance"
+      + vpc_id                             = (known after apply)
+
+      + health_check {
+          + enabled             = (known after apply)
+          + healthy_threshold   = (known after apply)
+          + interval            = (known after apply)
+          + matcher             = (known after apply)
+          + path                = (known after apply)
+          + port                = (known after apply)
+          + protocol            = (known after apply)
+          + timeout             = (known after apply)
+          + unhealthy_threshold = (known after apply)
+        }
+
+      + stickiness {
+          + cookie_duration = (known after apply)
+          + cookie_name     = (known after apply)
+          + enabled         = (known after apply)
+          + type            = (known after apply)
+        }
+    }
+
+  # aws_lb_target_group_attachment.tg-attachment[0] will be created
+  + resource "aws_lb_target_group_attachment" "tg-attachment" {
+      + id               = (known after apply)
+      + port             = 80
+      + target_group_arn = (known after apply)
+      + target_id        = (known after apply)
+    }
+
+  # aws_lb_target_group_attachment.tg-attachment[1] will be created
+  + resource "aws_lb_target_group_attachment" "tg-attachment" {
+      + id               = (known after apply)
+      + port             = 80
+      + target_group_arn = (known after apply)
+      + target_id        = (known after apply)
+    }
+
+  # aws_route_table.crt will be created
+  + resource "aws_route_table" "crt" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + route            = [
+          + {
+              + carrier_gateway_id         = ""
+              + cidr_block                 = "0.0.0.0/0"
+              + core_network_arn           = ""
+              + destination_prefix_list_id = ""
+              + egress_only_gateway_id     = ""
+              + gateway_id                 = (known after apply)
+              + instance_id                = ""
+              + ipv6_cidr_block            = ""
+              + local_gateway_id           = ""
+              + nat_gateway_id             = ""
+              + network_interface_id       = ""
+              + transit_gateway_id         = ""
+              + vpc_endpoint_id            = ""
+              + vpc_peering_connection_id  = ""
+            },
+        ]
+      + tags             = {
+          + "Name"    = "prod-public-crt"
+          + "project" = "bytedance-assessment"
+        }
+      + tags_all         = {
+          + "Name"    = "prod-public-crt"
+          + "project" = "bytedance-assessment"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # aws_route_table_association.public-subnet-1[0] will be created
+  + resource "aws_route_table_association" "public-subnet-1" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # aws_route_table_association.public-subnet-1[1] will be created
+  + resource "aws_route_table_association" "public-subnet-1" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # aws_security_group.allow-all will be created
+  + resource "aws_security_group" "allow-all" {
+      + arn                    = (known after apply)
+      + description            = "Managed by Terraform"
+      + egress                 = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + description      = ""
+              + from_port        = 0
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "-1"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 0
+            },
+        ]
+      + id                     = (known after apply)
+      + ingress                = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + description      = ""
+              + from_port        = 22
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 22
+            },
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + description      = ""
+              + from_port        = 80
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 80
+            },
+        ]
+      + name                   = (known after apply)
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Name"    = "allow-all-sg"
+          + "project" = "bytedance-assessment"
+        }
+      + tags_all               = {
+          + "Name"    = "allow-all-sg"
+          + "project" = "bytedance-assessment"
+        }
+      + vpc_id                 = (known after apply)
+    }
+
+  # aws_subnet.main-vpc-subnet[0] will be created
+  + resource "aws_subnet" "main-vpc-subnet" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "ap-southeast-1a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.9.1.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = true
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "Name"    = "main-vpc-subnets"
+          + "project" = "bytedance-assessment"
+        }
+      + tags_all                                       = {
+          + "Name"    = "main-vpc-subnets"
+          + "project" = "bytedance-assessment"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # aws_subnet.main-vpc-subnet[1] will be created
+  + resource "aws_subnet" "main-vpc-subnet" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "ap-southeast-1b"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.9.2.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = true
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "Name"    = "main-vpc-subnets"
+          + "project" = "bytedance-assessment"
+        }
+      + tags_all                                       = {
+          + "Name"    = "main-vpc-subnets"
+          + "project" = "bytedance-assessment"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # aws_volume_attachment.volume_attachment[0] will be created
+  + resource "aws_volume_attachment" "volume_attachment" {
+      + device_name  = "/dev/sdh"
+      + force_detach = true
+      + id           = (known after apply)
+      + instance_id  = (known after apply)
+      + volume_id    = (known after apply)
+    }
+
+  # aws_volume_attachment.volume_attachment[1] will be created
+  + resource "aws_volume_attachment" "volume_attachment" {
+      + device_name  = "/dev/sdh"
+      + force_detach = true
+      + id           = (known after apply)
+      + instance_id  = (known after apply)
+      + volume_id    = (known after apply)
+    }
+
+  # aws_vpc.main-vpc will be created
+  + resource "aws_vpc" "main-vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.9.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_classiclink                   = (known after apply)
+      + enable_classiclink_dns_support       = (known after apply)
+      + enable_dns_hostnames                 = (known after apply)
+      + enable_dns_support                   = true
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "Name"    = "main-vpc"
+          + "project" = "bytedance-assessment"
+        }
+      + tags_all                             = {
+          + "Name"    = "main-vpc"
+          + "project" = "bytedance-assessment"
+        }
+    }
+
+Plan: 20 to add, 0 to change, 0 to destroy.
+aws_key_pair.key: Creating...
+aws_vpc.main-vpc: Creating...
+aws_key_pair.key: Creation complete after 0s [id=ec2-pvt-key]
+aws_vpc.main-vpc: Creation complete after 1s [id=vpc-0fd35b4355059bc91]
+aws_internet_gateway.igw: Creating...
+aws_subnet.main-vpc-subnet[1]: Creating...
+aws_subnet.main-vpc-subnet[0]: Creating...
+aws_lb_target_group.web_servers: Creating...
+aws_security_group.allow-all: Creating...
+aws_internet_gateway.igw: Creation complete after 0s [id=igw-0f332ca012806811d]
+aws_route_table.crt: Creating...
+aws_lb_target_group.web_servers: Creation complete after 0s [id=arn:aws:elasticloadbalancing:ap-southeast-1:163012004372:targetgroup/alb-target-group/18e700db95cead6f]
+aws_route_table.crt: Creation complete after 1s [id=rtb-02bcbf43e5e179c64]
+aws_security_group.allow-all: Creation complete after 2s [id=sg-0618651e77536ba34]
+aws_subnet.main-vpc-subnet[0]: Still creating... [10s elapsed]
+aws_subnet.main-vpc-subnet[1]: Still creating... [10s elapsed]
+aws_subnet.main-vpc-subnet[0]: Creation complete after 10s [id=subnet-0cfbcbf12a134a778]
+aws_subnet.main-vpc-subnet[1]: Creation complete after 10s [id=subnet-049870a155b5ad790]
+aws_route_table_association.public-subnet-1[1]: Creating...
+aws_route_table_association.public-subnet-1[0]: Creating...
+aws_lb.application_load_balancer: Creating...
+aws_instance.linux-vm[0]: Creating...
+aws_instance.linux-vm[1]: Creating...
+aws_route_table_association.public-subnet-1[0]: Creation complete after 1s [id=rtbassoc-080d397db1d2bed8a]
+aws_route_table_association.public-subnet-1[1]: Creation complete after 1s [id=rtbassoc-028bb7b84fa01318d]
+aws_lb.application_load_balancer: Still creating... [10s elapsed]
+aws_instance.linux-vm[1]: Still creating... [10s elapsed]
+aws_instance.linux-vm[0]: Still creating... [10s elapsed]
+aws_instance.linux-vm[1]: Still creating... [20s elapsed]
+aws_lb.application_load_balancer: Still creating... [20s elapsed]
+aws_instance.linux-vm[0]: Still creating... [20s elapsed]
+aws_instance.linux-vm[0]: Still creating... [30s elapsed]
+aws_lb.application_load_balancer: Still creating... [30s elapsed]
+aws_instance.linux-vm[1]: Still creating... [30s elapsed]
+aws_instance.linux-vm[1]: Provisioning with 'remote-exec'...
+aws_instance.linux-vm[1] (remote-exec): Connecting to remote host via SSH...
+aws_instance.linux-vm[1] (remote-exec):   Host: 54.254.120.250
+aws_instance.linux-vm[1] (remote-exec):   User: ec2-user
+aws_instance.linux-vm[1] (remote-exec):   Password: false
+aws_instance.linux-vm[1] (remote-exec):   Private key: true
+aws_instance.linux-vm[1] (remote-exec):   Certificate: false
+aws_instance.linux-vm[1] (remote-exec):   SSH Agent: true
+aws_instance.linux-vm[1] (remote-exec):   Checking Host Key: false
+aws_instance.linux-vm[1] (remote-exec):   Target Platform: unix
+aws_instance.linux-vm[0]: Provisioning with 'remote-exec'...
+aws_instance.linux-vm[0] (remote-exec): Connecting to remote host via SSH...
+aws_instance.linux-vm[0] (remote-exec):   Host: 54.169.55.6
+aws_instance.linux-vm[0] (remote-exec):   User: ec2-user
+aws_instance.linux-vm[0] (remote-exec):   Password: false
+aws_instance.linux-vm[0] (remote-exec):   Private key: true
+aws_instance.linux-vm[0] (remote-exec):   Certificate: false
+aws_instance.linux-vm[0] (remote-exec):   SSH Agent: true
+aws_instance.linux-vm[0] (remote-exec):   Checking Host Key: false
+aws_instance.linux-vm[0] (remote-exec):   Target Platform: unix
+aws_instance.linux-vm[1] (remote-exec): Connecting to remote host via SSH...
+aws_instance.linux-vm[1] (remote-exec):   Host: 54.254.120.250
+aws_instance.linux-vm[1] (remote-exec):   User: ec2-user
+aws_instance.linux-vm[1] (remote-exec):   Password: false
+aws_instance.linux-vm[1] (remote-exec):   Private key: true
+aws_instance.linux-vm[1] (remote-exec):   Certificate: false
+aws_instance.linux-vm[1] (remote-exec):   SSH Agent: true
+aws_instance.linux-vm[1] (remote-exec):   Checking Host Key: false
+aws_instance.linux-vm[1] (remote-exec):   Target Platform: unix
+aws_instance.linux-vm[0] (remote-exec): Connecting to remote host via SSH...
+aws_instance.linux-vm[0] (remote-exec):   Host: 54.169.55.6
+aws_instance.linux-vm[0] (remote-exec):   User: ec2-user
+aws_instance.linux-vm[0] (remote-exec):   Password: false
+aws_instance.linux-vm[0] (remote-exec):   Private key: true
+aws_instance.linux-vm[0] (remote-exec):   Certificate: false
+aws_instance.linux-vm[0] (remote-exec):   SSH Agent: true
+aws_instance.linux-vm[0] (remote-exec):   Checking Host Key: false
+aws_instance.linux-vm[0] (remote-exec):   Target Platform: unix
+aws_instance.linux-vm[1] (remote-exec): Connecting to remote host via SSH...
+aws_instance.linux-vm[1] (remote-exec):   Host: 54.254.120.250
+aws_instance.linux-vm[1] (remote-exec):   User: ec2-user
+aws_instance.linux-vm[1] (remote-exec):   Password: false
+aws_instance.linux-vm[1] (remote-exec):   Private key: true
+aws_instance.linux-vm[1] (remote-exec):   Certificate: false
+aws_instance.linux-vm[1] (remote-exec):   SSH Agent: true
+aws_instance.linux-vm[1] (remote-exec):   Checking Host Key: false
+aws_instance.linux-vm[1] (remote-exec):   Target Platform: unix
+aws_instance.linux-vm[1] (remote-exec): Connected!
+aws_instance.linux-vm[0] (remote-exec): Connecting to remote host via SSH...
+aws_instance.linux-vm[0] (remote-exec):   Host: 54.169.55.6
+aws_instance.linux-vm[0] (remote-exec):   User: ec2-user
+aws_instance.linux-vm[0] (remote-exec):   Password: false
+aws_instance.linux-vm[0] (remote-exec):   Private key: true
+aws_instance.linux-vm[0] (remote-exec):   Certificate: false
+aws_instance.linux-vm[0] (remote-exec):   SSH Agent: true
+aws_instance.linux-vm[0] (remote-exec):   Checking Host Key: false
+aws_instance.linux-vm[0] (remote-exec):   Target Platform: unix
+aws_instance.linux-vm[0] (remote-exec): Connected!
+aws_instance.linux-vm[1] (remote-exec): Loaded plugins: extras_suggestions,
+aws_instance.linux-vm[1] (remote-exec):               : langpacks, priorities,
+aws_instance.linux-vm[1] (remote-exec):               : update-motd
+aws_instance.linux-vm[1] (remote-exec): Existing lock /var/run/yum.pid: another copy is running as pid 3238.
+aws_instance.linux-vm[1] (remote-exec): Another app is currently holding the yum lock; waiting for it to exit...
+aws_instance.linux-vm[1] (remote-exec):   The other application is: yum
+aws_instance.linux-vm[1] (remote-exec):     Memory :  33 M RSS (331 MB VSZ)
+aws_instance.linux-vm[1] (remote-exec):     Started: Sun May 15 09:48:27 2022 - 00:03 ago
+aws_instance.linux-vm[1] (remote-exec):     State  : Sleeping, pid: 3238
+aws_instance.linux-vm[0] (remote-exec): Loaded plugins: extras_suggestions,
+aws_instance.linux-vm[0] (remote-exec):               : langpacks, priorities,
+aws_instance.linux-vm[0] (remote-exec):               : update-motd
+aws_instance.linux-vm[0] (remote-exec): Existing lock /var/run/yum.pid: another copy is running as pid 3233.
+aws_instance.linux-vm[0] (remote-exec): Another app is currently holding the yum lock; waiting for it to exit...
+aws_instance.linux-vm[0] (remote-exec):   The other application is: yum
+aws_instance.linux-vm[0] (remote-exec):     Memory :  33 M RSS (331 MB VSZ)
+aws_instance.linux-vm[0] (remote-exec):     Started: Sun May 15 09:48:26 2022 - 00:04 ago
+aws_instance.linux-vm[0] (remote-exec):     State  : Running, pid: 3233
+aws_instance.linux-vm[1]: Still creating... [40s elapsed]
+aws_instance.linux-vm[0]: Still creating... [40s elapsed]
+aws_lb.application_load_balancer: Still creating... [40s elapsed]
+aws_instance.linux-vm[1] (remote-exec): Another app is currently holding the yum lock; waiting for it to exit...
+aws_instance.linux-vm[1] (remote-exec):   The other application is: yum
+aws_instance.linux-vm[1] (remote-exec):     Memory :  84 M RSS (383 MB VSZ)
+aws_instance.linux-vm[1] (remote-exec):     Started: Sun May 15 09:48:27 2022 - 00:05 ago
+aws_instance.linux-vm[1] (remote-exec):     State  : Running, pid: 3238
+aws_instance.linux-vm[0] (remote-exec): Another app is currently holding the yum lock; waiting for it to exit...
+aws_instance.linux-vm[0] (remote-exec):   The other application is: yum
+aws_instance.linux-vm[0] (remote-exec):     Memory :  87 M RSS (386 MB VSZ)
+aws_instance.linux-vm[0] (remote-exec):     Started: Sun May 15 09:48:26 2022 - 00:06 ago
+aws_instance.linux-vm[0] (remote-exec):     State  : Running, pid: 3233
+aws_instance.linux-vm[1] (remote-exec): Another app is currently holding the yum lock; waiting for it to exit...
+aws_instance.linux-vm[1] (remote-exec):   The other application is: yum
+aws_instance.linux-vm[1] (remote-exec):     Memory :  91 M RSS (389 MB VSZ)
+aws_instance.linux-vm[1] (remote-exec):     Started: Sun May 15 09:48:27 2022 - 00:07 ago
+aws_instance.linux-vm[1] (remote-exec):     State  : Running, pid: 3238
+aws_instance.linux-vm[0] (remote-exec): Another app is currently holding the yum lock; waiting for it to exit...
+aws_instance.linux-vm[0] (remote-exec):   The other application is: yum
+aws_instance.linux-vm[0] (remote-exec):     Memory :  90 M RSS (389 MB VSZ)
+aws_instance.linux-vm[0] (remote-exec):     Started: Sun May 15 09:48:26 2022 - 00:08 ago
+aws_instance.linux-vm[0] (remote-exec):     State  : Running, pid: 3233
+aws_instance.linux-vm[1] (remote-exec): Another app is currently holding the yum lock; waiting for it to exit...
+aws_instance.linux-vm[1] (remote-exec):   The other application is: yum
+aws_instance.linux-vm[1] (remote-exec):     Memory : 164 M RSS (463 MB VSZ)
+aws_instance.linux-vm[1] (remote-exec):     Started: Sun May 15 09:48:27 2022 - 00:09 ago
+aws_instance.linux-vm[1] (remote-exec):     State  : Running, pid: 3238
+aws_instance.linux-vm[0] (remote-exec): Another app is currently holding the yum lock; waiting for it to exit...
+aws_instance.linux-vm[0] (remote-exec):   The other application is: yum
+aws_instance.linux-vm[0] (remote-exec):     Memory : 163 M RSS (462 MB VSZ)
+aws_instance.linux-vm[0] (remote-exec):     Started: Sun May 15 09:48:26 2022 - 00:10 ago
+aws_instance.linux-vm[0] (remote-exec):     State  : Running, pid: 3233
+aws_instance.linux-vm[1] (remote-exec): Package python-2.7.18-1.amzn2.0.4.x86_64 already installed and latest version
+aws_instance.linux-vm[1] (remote-exec): Nothing to do
+aws_instance.linux-vm[1]: Provisioning with 'local-exec'...
+aws_instance.linux-vm[1] (local-exec): Executing: ["/bin/sh" "-c" "ansible-playbook -u ec2-user -i '54.254.120.250,' --private-key keys/bytedance-assessment.pem ansible/playbook.yml"]
+aws_instance.linux-vm[0] (remote-exec): Package python-2.7.18-1.amzn2.0.4.x86_64 already installed and latest version
+aws_instance.linux-vm[0] (remote-exec): Nothing to do
+aws_instance.linux-vm[0]: Provisioning with 'local-exec'...
+aws_instance.linux-vm[0] (local-exec): Executing: ["/bin/sh" "-c" "ansible-playbook -u ec2-user -i '54.169.55.6,' --private-key keys/bytedance-assessment.pem ansible/playbook.yml"]
+
+aws_instance.linux-vm[1] (local-exec): PLAY [all] *********************************************************************
+
+aws_instance.linux-vm[1] (local-exec): TASK [Gathering Facts] *********************************************************
+The authenticity of host '54.254.120.250 (54.254.120.250)' can't be established.
+ECDSA key fingerprint is SHA256:5QcDudoCCnFf6MhoIHglaQnq7EAtuHCAvJJZtscVwRY.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+aws_instance.linux-vm[0] (local-exec): PLAY [all] *********************************************************************
+
+aws_instance.linux-vm[0] (local-exec): TASK [Gathering Facts] *********************************************************
+The authenticity of host '54.169.55.6 (54.169.55.6)' can't be established.
+ECDSA key fingerprint is SHA256:TJP4Zl9vtGf+yPSCNUmmG62Z9Ax68VhyNtjTXkWa6oI.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? aws_instance.linux-vm[0]: Still creating... [50s elapsed]
+aws_lb.application_load_balancer: Still creating... [50s elapsed]
+aws_instance.linux-vm[1]: Still creating... [50s elapsed]
+yes
+aws_instance.linux-vm[1] (local-exec): [WARNING]: Platform linux on host 54.254.120.250 is using the discovered Python
+aws_instance.linux-vm[1] (local-exec): interpreter at /usr/bin/python3.7, but future installation of another Python
+aws_instance.linux-vm[1] (local-exec): interpreter could change the meaning of that path. See
+aws_instance.linux-vm[1] (local-exec): https://docs.ansible.com/ansible-
+aws_instance.linux-vm[1] (local-exec): core/2.12/reference_appendices/interpreter_discovery.html for more information.
+aws_instance.linux-vm[1] (local-exec): ok: [54.254.120.250]
+
+aws_instance.linux-vm[1] (local-exec): TASK [Enable nginx for amazon linux 2] *****************************************
+aws_instance.linux-vm[1] (local-exec): changed: [54.254.120.250]
+
+aws_instance.linux-vm[1] (local-exec): TASK [Install nginx] ***********************************************************
+aws_instance.linux-vm[0]: Still creating... [1m0s elapsed]
+aws_instance.linux-vm[1]: Still creating... [1m0s elapsed]
+aws_lb.application_load_balancer: Still creating... [1m0s elapsed]
+aws_lb.application_load_balancer: Still creating... [1m10s elapsed]
+aws_instance.linux-vm[0]: Still creating... [1m10s elapsed]
+aws_instance.linux-vm[1]: Still creating... [1m10s elapsed]
+aws_instance.linux-vm[1] (local-exec): changed: [54.254.120.250]
+
+aws_instance.linux-vm[1] (local-exec): TASK [Copy nginx config files] *************************************************
+aws_instance.linux-vm[1] (local-exec): changed: [54.254.120.250]
+
+aws_instance.linux-vm[1] (local-exec): TASK [Copy static files] *******************************************************
+aws_instance.linux-vm[0]: Still creating... [1m20s elapsed]
+aws_lb.application_load_balancer: Still creating... [1m20s elapsed]
+aws_instance.linux-vm[1]: Still creating... [1m20s elapsed]
+aws_instance.linux-vm[1] (local-exec): changed: [54.254.120.250]
+
+aws_instance.linux-vm[1] (local-exec): TASK [Restart Nginx] ***********************************************************
+aws_instance.linux-vm[1] (local-exec): changed: [54.254.120.250]
+
+aws_instance.linux-vm[1] (local-exec): PLAY RECAP *********************************************************************
+aws_instance.linux-vm[1] (local-exec): 54.254.120.250             : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+aws_instance.linux-vm[1]: Creation complete after 1m23s [id=i-058a9e9a7e01568f5]
+yes
+aws_instance.linux-vm[0] (local-exec): [WARNING]: Platform linux on host 54.169.55.6 is using the discovered Python
+aws_instance.linux-vm[0] (local-exec): interpreter at /usr/bin/python3.7, but future installation of another Python
+aws_instance.linux-vm[0] (local-exec): interpreter could change the meaning of that path. See
+aws_instance.linux-vm[0] (local-exec): https://docs.ansible.com/ansible-
+aws_instance.linux-vm[0] (local-exec): core/2.12/reference_appendices/interpreter_discovery.html for more information.
+aws_instance.linux-vm[0] (local-exec): ok: [54.169.55.6]
+
+aws_instance.linux-vm[0] (local-exec): TASK [Enable nginx for amazon linux 2] *****************************************
+aws_instance.linux-vm[0] (local-exec): changed: [54.169.55.6]
+
+aws_instance.linux-vm[0] (local-exec): TASK [Install nginx] ***********************************************************
+aws_instance.linux-vm[0]: Still creating... [1m30s elapsed]
+aws_lb.application_load_balancer: Still creating... [1m30s elapsed]
+aws_instance.linux-vm[0] (local-exec): changed: [54.169.55.6]
+
+aws_instance.linux-vm[0] (local-exec): TASK [Copy nginx config files] *************************************************
+aws_instance.linux-vm[0] (local-exec): changed: [54.169.55.6]
+
+aws_instance.linux-vm[0] (local-exec): TASK [Copy static files] *******************************************************
+aws_instance.linux-vm[0]: Still creating... [1m40s elapsed]
+aws_lb.application_load_balancer: Still creating... [1m40s elapsed]
+aws_instance.linux-vm[0] (local-exec): changed: [54.169.55.6]
+
+aws_instance.linux-vm[0] (local-exec): TASK [Restart Nginx] ***********************************************************
+aws_instance.linux-vm[0] (local-exec): changed: [54.169.55.6]
+
+aws_instance.linux-vm[0] (local-exec): PLAY RECAP *********************************************************************
+aws_instance.linux-vm[0] (local-exec): 54.169.55.6                : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+aws_instance.linux-vm[0]: Creation complete after 1m45s [id=i-09dd1045d00de1e82]
+aws_lb_target_group_attachment.tg-attachment[0]: Creating...
+aws_lb_target_group_attachment.tg-attachment[1]: Creating...
+aws_ebs_volume.ebs_volume[1]: Creating...
+aws_ebs_volume.ebs_volume[0]: Creating...
+aws_lb_target_group_attachment.tg-attachment[1]: Creation complete after 0s [id=arn:aws:elasticloadbalancing:ap-southeast-1:163012004372:targetgroup/alb-target-group/18e700db95cead6f-20220515094935679600000003]
+aws_lb_target_group_attachment.tg-attachment[0]: Creation complete after 0s [id=arn:aws:elasticloadbalancing:ap-southeast-1:163012004372:targetgroup/alb-target-group/18e700db95cead6f-20220515094935731400000004]
+aws_lb.application_load_balancer: Still creating... [1m50s elapsed]
+aws_ebs_volume.ebs_volume[1]: Still creating... [10s elapsed]
+aws_ebs_volume.ebs_volume[0]: Still creating... [10s elapsed]
+aws_ebs_volume.ebs_volume[1]: Creation complete after 10s [id=vol-0ce3ac82981bb4ded]
+aws_ebs_volume.ebs_volume[0]: Creation complete after 10s [id=vol-0e0ac91c06355e403]
+aws_volume_attachment.volume_attachment[1]: Creating...
+aws_volume_attachment.volume_attachment[0]: Creating...
+aws_lb.application_load_balancer: Still creating... [2m0s elapsed]
+aws_volume_attachment.volume_attachment[1]: Still creating... [10s elapsed]
+aws_volume_attachment.volume_attachment[0]: Still creating... [10s elapsed]
+aws_lb.application_load_balancer: Still creating... [2m10s elapsed]
+aws_volume_attachment.volume_attachment[0]: Still creating... [20s elapsed]
+aws_volume_attachment.volume_attachment[1]: Still creating... [20s elapsed]
+aws_volume_attachment.volume_attachment[0]: Creation complete after 21s [id=vai-1450188270]
+aws_volume_attachment.volume_attachment[1]: Creation complete after 21s [id=vai-3346287713]
+aws_lb.application_load_balancer: Still creating... [2m20s elapsed]
+aws_lb.application_load_balancer: Still creating... [2m30s elapsed]
+aws_lb.application_load_balancer: Still creating... [2m40s elapsed]
+aws_lb.application_load_balancer: Still creating... [2m50s elapsed]
+aws_lb.application_load_balancer: Still creating... [3m0s elapsed]
+aws_lb.application_load_balancer: Creation complete after 3m2s [id=arn:aws:elasticloadbalancing:ap-southeast-1:163012004372:loadbalancer/app/tf-lb-20220515094751366400000002/5e21cd77aff935de]
+aws_lb_listener.alb_listener: Creating...
+aws_lb_listener.alb_listener: Creation complete after 0s [id=arn:aws:elasticloadbalancing:ap-southeast-1:163012004372:listener/app/tf-lb-20220515094751366400000002/5e21cd77aff935de/935ede110aefd1a3]

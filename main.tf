@@ -22,7 +22,6 @@ resource "aws_vpc" "main-vpc" {
   tags = {
     Name = "main-vpc"
     project = "bytedance-assessment"
-    cost-center = "bytedance"
   }
 }
 
@@ -34,14 +33,18 @@ resource "aws_subnet" "main-vpc-subnet" {
   availability_zone = var.availability_zones[count.index]
 
   tags = {
-    Name = "main-vpc"
+    Name = "main-vpc-subnets"
     project = "bytedance-assessment"
-    cost-center = "bytedance"
   }
 }
 
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.main-vpc.id
+
+  tags = {
+    Name = "main-vpc-ig"
+    project = "bytedance-assessment"
+  }
 }
 
 resource "aws_route_table" "crt" {
@@ -53,6 +56,7 @@ resource "aws_route_table" "crt" {
 
   tags = {
     Name = "prod-public-crt"
+    project = "bytedance-assessment"
   }
 }
 
@@ -76,6 +80,11 @@ resource "aws_security_group" "allow-all" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  tags = {
+    Name = "allow-all-sg"
+    project = "bytedance-assessment"
+  }
 }
 
 resource "aws_route_table_association" "public-subnet-1" {
@@ -96,7 +105,6 @@ resource "aws_instance" "linux-vm" {
   tags = {
     Name = "ec2-linux"
     project = "bytedance-assessment"
-    cost-center = "bytedance"
   }
 
   connection {
@@ -124,6 +132,11 @@ resource "aws_instance" "linux-vm" {
 resource "aws_key_pair" "key" {
   key_name   = "ec2-pvt-key"
   public_key = file(var.PUBLIC_KEY_PATH)
+
+  tags = {
+    Name = "key-pair"
+    project = "bytedance-assessment"
+  }
 }
 
 resource "aws_ebs_volume" "ebs_volume" {
@@ -132,9 +145,8 @@ resource "aws_ebs_volume" "ebs_volume" {
   availability_zone = element(aws_instance.linux-vm.*.availability_zone, count.index)
 
   tags = {
-    Name = "ec2-linux-EBS"
+    Name = "ebs"
     project = "bytedance-assessment"
-    cost-center = "bytedance"
   }
 }
 
@@ -152,7 +164,8 @@ resource "aws_lb" "application_load_balancer" {
   subnets = aws_subnet.main-vpc-subnet.*.id
 
   tags = {
-    Name = "application-load-balancer"
+    Name = "alb"
+    project = "bytedance-assessment"
   }
 }
 
@@ -161,6 +174,11 @@ resource "aws_lb_target_group" "web_servers" {
   port     = 80
   protocol = "HTTP"
   vpc_id   = aws_vpc.main-vpc.id
+
+  tags = {
+    Name = "alb-tg"
+    project = "bytedance-assessment"
+  }
 }
 
 resource "aws_lb_listener" "alb_listener" {
@@ -171,6 +189,11 @@ resource "aws_lb_listener" "alb_listener" {
   default_action {
     type = "forward"
     target_group_arn = aws_lb_target_group.web_servers.arn
+  }
+
+  tags = {
+    Name = "alb-listener"
+    project = "bytedance-assessment"
   }
 }
 
